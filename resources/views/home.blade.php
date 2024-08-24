@@ -7,21 +7,18 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
-    <!-- Navbar -->
-   <!-- Include the Navbar component -->
-   <x-navbar />
-    <!-- Navbar -->
 
+    <!-- Navbar -->
+       <x-navbar />
+   
     <!-- Menu Lateral -->
-    <div class="menu-lateral">
-        <!-- Menu Lateral Content -->
-    </div>
-    <!-- Menu Lateral -->
+       <x-menu-lateral />   
 
-    <!-- Conteúdo -->
-    <div class="conteudo">
-        <!-- Conteúdo Principal -->
+    <!-- Conteúdo principal -->
+    
+    <div class="conteudo-principal">
+        <x-conteudo :licitations="$licitations"/>
     </div>
-    <!-- Conteúdo -->
+
 </body>
 </html>

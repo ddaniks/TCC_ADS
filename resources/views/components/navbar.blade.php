@@ -18,13 +18,14 @@
             <a class="nav-link" href="#">Dashboard</a>
           </li>
         </ul>
+      </div>
 
         <div class="d-flex align-items-center">
           <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">Login </button>
-          <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">Sign up for free </button>          
+          <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">Sign up  </button>          
         </div>
 
-      </div>
+      
     </div>
   </nav>
   

@@ -46,3 +46,7 @@ Route::post('settings', [SettingsController::class, 'update'])->name('settings.u
 // Rota para Ajuda e Suporte
 Route::get('support', [SupportController::class, 'index'])->name('support');
 Route::post('support', [SupportController::class, 'submit'])->name('support.submit');
+
+//rota api
+Route::get('/licitações', [App\Http\Controllers\LicitationController::class, 'index'])->name('licitations.index');
+

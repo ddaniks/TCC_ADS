@@ -1,39 +1,205 @@
-/* public/css/home.css */
+/* Estilo geral da página */
 
-/* Estilo para a navbar */
-.navbar-container {
-    background-color: #FFA500; /* Laranja claro */
-    margin-bottom: 20px; /* Espaço abaixo da navbar */
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
 }
 
-/* Estilo para o menu lateral */
+
+/* Navbar */
+
+.navbar {
+
+    background-color: #63fd84; /* Fundo laranja claro */
+
+    border: #007bff;
+
+    padding: 1rem;
+
+    position: fixed; /* Fixa a navbar no topo */
+
+    width: 100%; /* Garante que a navbar ocupe a largura total */
+
+    top: 0; /* Fica no topo da página */
+
+    z-index: 1000; /* Garante que a navbar fique sobre outros elementos */
+
+}
+
+
+.navbar .container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.navbar .navbar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.navbar .navbar-brand img {
+
+    height: 16px;
+
+}
+
+
+.navbar .navbar-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    list-style-type: none;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+
+.navbar .navbar-nav .nav-item {
+
+    margin-right: 20rem;
+
+}
+
+
+.navbar .navbar-nav .nav-link {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+    
+    
+
+}
+
+
+.navbar .d-flex {
+
+    display: flex;
+
+    align-items: center;
+
+    margin-right: 5rem;
+
+}
+
+
+.navbar .btn {
+
+    margin-left: 0.5rem;
+
+}
+
+
+/* Menu lateral */
+
 .menu-lateral {
-    background-color: #f0f0f0; /* Cinza claro */
-    padding: 15px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    height: 100%; /* Ocupa toda a altura disponível */
+
+    background-color: #faffbb; /* Fundo cinza claro */
+
+    padding: 10px;
+
+    width: 15%; /* Define a largura como 20% da tela */
+
+    height: calc(100vh - 56px); /* Ajusta a altura para ocupar a tela inteira menos a altura da navbar */
+
+    position: fixed; /* Fixa o menu na lateral esquerda */
+
+    top: 56px; /* Compensa a altura da navbar */
+
+    left: 0;
+
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para dar destaque */
+
+    overflow-y: auto; /* Permite rolagem no menu se necessário */
+
 }
 
-/* Estilo para o conteúdo principal */
+
+/* Links do menu lateral */
+
+.menu-lateral .nav-link {
+
+    color: #333;
+
+    margin-bottom: 10px;
+
+    display: block; /* Garante que os links ocupem a largura total do menu */
+
+}
+
+
+/* Estilo para o link ativo no menu lateral */
+
+.menu-lateral .nav-link.active {
+
+    font-weight: bold;
+
+    color: #007bff;
+
+}
+
+
+/* Conteúdo principal */
+
+
 .conteudo-principal {
-    padding: 15px; /* Espaçamento interno */
+    margin-left: 15%; /* Deixa espaço para o menu lateral */
+    padding: 20px;
+    margin-top: 56px;
+    height: calc(100vh - 56px); /* Altura total da tela menos a altura da navbar */
+    background-color: #ffffff; /* Fundo branco para o conteúdo */
+    overflow-y: auto; /* Permite rolagem no conteúdo se necessário */
+    
 }
 
-/* Estilo para o card de licitações */
+
+/* Container para os cards */
+
+.container-cards {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+}
+
+
+/* Estilo para os cards */
+
 .card {
-    margin-bottom: 20px; /* Espaço abaixo de cada card */
-    border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
-}
 
-/* Estilo para o botão de busca */
-.btn-primary {
-    background-color: #007bff; /* Cor do botão de busca */
-    border-color: #007bff; /* Cor da borda do botão */
-}
+    background-color: #fff;
 
-/* Estilo para o botão de detalhes */
-.btn-primary {
-    background-color: #0056b3; /* Cor do botão de detalhes */
-    border-color: #0056b3; /* Cor da borda do botão */
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+
+    max-width: 300px;
+
 }
