@@ -10,6 +10,11 @@ use App\Http\Controllers\RequisitoController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SupportController;
+use App\Http\Controllers\importController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\CSVController;
+use App\Http\Controllers\LicitationController;
+
 
 
 // Rota para a Tela Inicial
@@ -49,4 +54,25 @@ Route::post('support', [SupportController::class, 'submit'])->name('support.subm
 
 //rota api
 Route::get('/licitações', [App\Http\Controllers\LicitationController::class, 'index'])->name('licitations.index');
+
+
+// routes/web.php
+Route::post('/import-csv', [LicitationController::class, 'importCSV'])->name('importCSV');
+Route::post('/importar-csv', [ImportController::class, 'importCsv'])->name('home');
+Route::post('/importar-csv', [ImportController::class, 'import']);
+Route::post('/importar-csv', [HomeController::class, 'import']);
+
+
+Route::post('/upload-files', [UploadController::class, 'store'])->name('uploadFiles');
+Route::post('/import-csv', [CSVController::class, 'importCSV'])->name('importCSV');
+Route::post('/importar-csv', [RequisitoController::class, 'importarCSV'])->name('importar-csv');
+
+
+
+
+Route::get('/importar', function () {
+    return view('importar');
+});
+
+Route::post('/importar', [RequisitoController::class, 'importarCSV'])->name('importarCSV');
 

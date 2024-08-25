@@ -2,6 +2,26 @@
 <div class="conteudo">
     <div class="card-deck">
         <h1>Licitações</h1>
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <div class="conteudo">
+            <h2>Importar CSV</h2>
+            <form action="{{ route('importCSV') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="csvFile">Escolha um arquivo CSV:</label>
+                    <input type="file" name="csvFile" id="csvFile" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Importar</button>
+            </form>
+        </div>
+        
+        
         @forelse($licitations as $licitation)
             <div class="card">
                 <div class="card">
@@ -19,5 +39,45 @@
         @empty
             <p>Nenhuma licitação disponível.</p>
         @endforelse
+
+        <div class="conteudo">
+            <div class="card-deck">
+                <h1>Requisitos</h1>
+                <form action="{{ route('uploadFiles') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div>
+                        <!-- Exemplo de checkbox de requisitos -->
+                        <label><input type="checkbox" name="requisitos[]" value="requisito1"> Requisito 1</label>
+                        <input type="file" name="arquivos[]"><br>
+                        <label><input type="checkbox" name="requisitos[]" value="requisito2"> Requisito 2</label>
+                        <input type="file" name="arquivos[]"><br>
+                        <label><input type="checkbox" name="requisitos[]" value="requisito3"> Requisito 3</label>
+                        <input type="file" name="arquivos[]"><br>
+                    </div>
+                
+                    {{-- <div>
+                        <!-- Input para upload de arquivos -->
+                        <input type="file" name="arquivos[]">
+                        <input type="file" name="arquivos[]">
+                        <input type="file" name="arquivos[]">
+                    </div> --}}
+                
+                    <button type="submit">Enviar</button>
+                </form>
+                
+            </div>
+        </div>
+        
+        <script>
+            function toggleFileInput(index) {
+                var fileInput = document.getElementById('file-upload-' + index);
+                if (document.getElementById('requisito-' + index).checked) {
+                    fileInput.style.display = 'block';
+                } else {
+                    fileInput.style.display = 'none';
+                }
+            }
+        </script>
+        
     </div>
 </div>

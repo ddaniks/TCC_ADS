@@ -4,7 +4,7 @@
             <a class="nav-link active" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Minhas Licitações</a>
+            <a class="nav-link" href="import.blade.php">Minhas Licitações</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Configurações</a>
